@@ -1,8 +1,8 @@
 # Experiment Specific
 experiment_name: 'UNet_Abdomen_MR2CT_Adapt_PFA'
-data_root: '/mnt/sda/qinji/Domain_Adaptation/data/Abdomen_Data/'
-save_root: '/mnt/sda/qinji/Proto_Contra_SFDA_results/Target_Adapt/'
-source_model_path: '/home/qinji/ProtoSFDA_results/abdomen_results/UNet_abdomen_MR/saved_models/best_model_step_2700.pth'
+data_root: '/users/scratch/baryaacovi-2024-06-01/projects/datasets/proto/prod'
+save_root: '/users/scratch/baryaacovi-2024-06-01/projects/MICCAI23-ProtoContra-SFDA'
+source_model_path: '/users/scratch/baryaacovi-2024-06-01/projects/MICCAI23-ProtoContra-SFDA/res/UNet_Abdomen_MR_Seg/exp_13_time_2024-05-02 20:13:34/saved_models/best_model_epoch_100_dice_0.9317.pth'
 target_sites:
 - 'CT'
 resume_dir: ''

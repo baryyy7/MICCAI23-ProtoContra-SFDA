@@ -2,10 +2,11 @@ import argparse
 import os
 import shutil
 import time
-from trainers import SourceDomainTrainer,PFA_trainer,CL_trainer
+from trainers import SourceDomainTrainer
 import json
 import glob
 import itertools
+import torch
 
 from options import get_options
 
@@ -69,5 +70,7 @@ if __name__ == '__main__':
     
     # # Target domain adaptation CL stage
     # trainer = CL_trainer(opt)
+    
+    print(torch.cuda.is_available())
     
     trainer.launch()

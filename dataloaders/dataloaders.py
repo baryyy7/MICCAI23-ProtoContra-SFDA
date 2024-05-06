@@ -38,6 +38,30 @@ class MyDataset(data.Dataset):
         data = np.load(self.all_data_path[index])
         name = self.name_list[index]
         img = data['image'].astype(np.float32)
+        min = None
+        max = None
+        if self.sites[0] == 'MR':
+            # MAX; 4.627546767028582
+            # MIN; -0.9766887193241466
+            min = -0.9766887193241466
+            max = 4.627546767028582
+            # img = img.transpose(1,0,2)
+            # img = img.flip(img)
+            #SIFA
+            # max =  4.135673522949219
+            # min = -1.1623437404632568
+        elif self.sites[0] == 'CT':
+            # MAX; 4.357650131157998
+            # MIN; -0.68961403043642
+            # MAX; 3.2775302958114225
+            # MIN; -0.7124789066081676
+            min = -0.7124789066081676
+            max = 3.2775302958114225
+            #SIFA
+            # max = 3.453932285308838
+            # min = -1.281092643737793
+        
+        img = (img - min) / (max - min)
         seg = data['label']
         if self.weak_strong_aug:
             transformed_w = self.augmenter_w(image=img, mask=seg)

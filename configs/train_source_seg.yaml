@@ -1,10 +1,13 @@
 # Experiment Specific
 experiment_name: 'UNet_Abdomen_CT_Seg'
-data_root: '/mnt/sda/qinji/Domain_Adaptation/data/Abdomen_Data/'
-save_root: '/mnt/sda/qinji/Proto_Contra_SFDA_results/Source_Seg'
+data_root: '/users/scratch/baryaacovi-2024-06-01/projects/datasets/proto/prod'
+save_root: '/users/scratch/baryaacovi-2024-06-01/projects/MICCAI23-ProtoContra-SFDA/res'
 source_sites:
-- 'CT'
+- 'MR'
+eval_sites:
+- 'MR'
 resume_dir: ''
+# resume: '/users/scratch/baryaacovi-2024-06-01/projects/MICCAI23-ProtoContra-SFDA/UNet_Abdomen_CT_Seg/exp_16_time_2024-05-01 11:28:57/saved_models/model_epoch_100_dice_1.0000.pth'
 continue_train: False
 total_epochs: 100
 random_seed: 999
